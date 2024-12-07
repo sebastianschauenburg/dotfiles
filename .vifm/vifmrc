@@ -1,0 +1,21 @@
+:filetype *.xls,*.doc,*.xlsx,*.docx,*.ods,*.odp,*.odt,*.ppt,*.pptx libreoffice %c &
+:filetype *.jpg,*.jpeg,*.png,*.gif,*.webp swayimg %c &
+:filetype *.pdf zathura %c >/dev/null 2>&1 &
+:filetype *.avi,*.mp4,*.mkv,*.mpeg,*.mpg,*.vob,*.wmv,*.3gp,*.ogg,*.mp3,*.flac mpv %c >/dev/null 2>&1 &
+
+" matches are automatically selected if 'hlsearch' is set
+" disable it for quicker navigation
+:set nohlsearch
+
+" Ignore case in search patterns (:substitute, / and ? commands) and characters after f and F commands.  It doesn't affect file filtering
+:set ignorecase
+
+" information will be saved to $VIFM/vifminfo
+" dhistory		enable directory history
+" savedirs		last visited directory
+" bmarks		named bookmarks
+" bookmarks		marks, except special ones like '< and '>
+:set vifminfo=bookmarks,bmarks,dhistory,savedirs
+
+" set visible columns
+:windo set viewcolumns=-{name}..,6{size},12{mtime}
